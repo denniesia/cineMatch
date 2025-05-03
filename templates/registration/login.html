@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+   <div
+      class="flex-1 bg-cover bg-center"
+      style="background-image: url('{% static "images/index.png" %}');"
+    >
+
+      <div class="h-full bg-black bg-opacity-40 flex items-center justify-center">
+        <div class="min-h-screen flex items-center justify-center">
+      <div class="bg-white p-8 rounded-2xl shadow-md w-full max-w-md" style="margin-bottom: 16rem; width: 100rem;">
+        <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">Log in to your account</h2>
+
+        <form method="post" action="{% url 'login' %}" class="space-y-4">
+          {% csrf_token %}
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Username</label>
+            <input type="text" name="username" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+          </div>
+
+          <div>
+            <label  class="block text-sm font-medium text-gray-700">Password</label>
+            <input type="password" name="password" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+
+          </div>
+            {% if error %}
+
+                 <div class="text-sm text-red-500 bg-red-100 p-2 rounded mb-4">
+                    {{error}}
+                 </div>
+
+            {% endif %}
+          <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg font-semibold transition duration-300">Log In</button>
+        </form>
+
+        <p class="text-center text-sm text-gray-600 mt-4">
+          Don't have an account?
+          <a href="{% url 'signup' %}" class="text-red-600 hover:underline">Sign up</a>
+        </p>
+  </div>
+</div>
+      </div>
+    </div>
+{% endblock %}
