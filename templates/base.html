@@ -29,6 +29,7 @@
     <div>
       <a href="{% url 'login' %}" class="text-white hover:underline" style="font-size: 20px; margin-right: 30px">Login</a>
     </div>
+
   </header>
 
   <!-- MAIN CONTENT -->
@@ -38,14 +39,29 @@
     <aside class="bg-gray-800 shadow-md p-4" style="width: 180px;">
       <h2 class="text-white font-semibold mb-4" style="font-weight: bold">Categories</h2>
       <ul class="space-y-2" style="color: white">
-          {% for genre in genre_names %}
-              <li><a href="#" class="hover:text-red-600">{{ genre }}</a></li>
-
-          {% endfor %}
-
-
+          <li><a href="#" class="hover:text-red-600">Action</a></li>
+          <li><a href="#" class="hover:text-red-600">Adventure</a></li>
+          <li><a href="#" class="hover:text-red-600">Animation</a></li>
+          <li><a href="#" class="hover:text-red-600">Comedy</a></li>
+          <li><a href="#" class="hover:text-red-600">Crime</a></li>
+          <li><a href="#" class="hover:text-red-600">Documentary</a></li>
+          <li><a href="#" class="hover:text-red-600">Drama</a></li>
+          <li><a href="#" class="hover:text-red-600">Family</a></li>
+          <li><a href="#" class="hover:text-red-600">Frantasy</a></li>
+          <li><a href="#" class="hover:text-red-600">History</a></li>
+          <li><a href="#" class="hover:text-red-600">Horror</a></li>
+          <li><a href="#" class="hover:text-red-600">Music</a></li>
+          <li><a href="#" class="hover:text-red-600">Mystery</a></li>
+          <li><a href="#" class="hover:text-red-600">Romance</a></li>
+          <li><a href="#" class="hover:text-red-600">Sci-Fi</a></li>
+          <li><a href="#" class="hover:text-red-600">TV Movie</a></li>
+          <li><a href="#" class="hover:text-red-600">Thriller</a></li>
+          <li><a href="#" class="hover:text-red-600">War</a></li>
+          <li><a href="#" class="hover:text-red-600">Western</a></li>
       </ul>
+      <hr class="my-4 border-t-1 border-gray-300">
     </aside>
+
 
     <!-- BACKGROUND IMAGE AREA -->
    {% block content %}
