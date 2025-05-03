@@ -4,7 +4,7 @@
 <h2>Popular Movies</h2>
 <div class="row">
   {% for movie in movies %}
-    <div class="col-md-4 mb-4">
+    <div class="col-md-2 mb-4">
       <div class="card">
         {% if movie.poster_path %}
           <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" class="card-img-top" alt="{{ movie.title }}">
