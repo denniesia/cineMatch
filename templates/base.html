@@ -14,7 +14,9 @@
 
     <!-- Left side: Logo + Search -->
     <div class="flex items-center space-x-4">
-      <div class="text-xl font-bold text-white" style="margin-left: 30px">cineMatch</div>
+      <div class="text-xl font-bold text-white" style="margin-left: 30px">
+          <a href="{% url 'index' %}">cineMatch</a>
+      </div>
       <input
         type="text"
         placeholder="Search movie title..."
@@ -34,8 +36,13 @@
 
     <!-- SIDEBAR -->
     <aside class="bg-gray-800 shadow-md p-4" style="width: 180px;">
-      <h2 class="text-white font-semibold mb-4">Categories</h2>
-      <ul class="space-y-2">
+      <h2 class="text-white font-semibold mb-4" style="font-weight: bold">Categories</h2>
+      <ul class="space-y-2" style="color: white">
+          {% for genre in genre_names %}
+              <li><a href="#" class="hover:text-red-600">{{ genre }}</a></li>
+
+          {% endfor %}
+
 
       </ul>
     </aside>
