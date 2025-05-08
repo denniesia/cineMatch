@@ -28,7 +28,7 @@
     <!-- Right side: Login -->
        {% if not user.is_authenticated %}
         <div>
-          <a href="{% url 'login' %}" class="text-white hover:underline" style="font-size: 20px; margin-right: 30px">Login</a>
+          <a href="{% url 'login' %}" class="text-white hover:text-gray-200 focus:outline-none font-medium" style="margin-right: 30px" >Login</a>
         </div>
         {% else %}
            <div class="relative group">
@@ -44,7 +44,12 @@
                         <a href="#" class="block px-6 py-2 text-gray-800 hover:bg-gray-100">Profile</a>
                         <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"> Settings</a>
                         <div class="border-t border-gray-200 my-1"></div>
-                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Logout</a>
+                        <form method="post" action="{% url 'logout' %}">
+                          {% csrf_token %}
+                          <button type="submit" class="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100">
+                            Logout
+                          </button>
+                        </form>
                     </div>
                 </div>
             </div>

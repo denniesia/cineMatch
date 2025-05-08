@@ -24,3 +24,8 @@ def login_user(request):
 def signup(request):
     #TODO
     return render(request, 'registration/signup.html')
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('index')
